@@ -1,3 +1,5 @@
-# example-deploy
+# Example Deploy
 
-1
+Slack Notifications
+
+* [AWS SETUP](aws-setup/README.md)
