@@ -1,5 +1,5 @@
 # Example Deploy
 
-Slack Notifications
+- Test AWS Slack Notifications
 
 * [AWS SETUP](aws-setup/README.md)
