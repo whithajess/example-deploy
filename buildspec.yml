@@ -6,20 +6,17 @@ phases:
       docker: 18  
 pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - echo Set IMAGE_TAG from Commit Ref
-      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - echo IMAGE_TAG is $IMAGE_TAG
-  build:
+      - echo Prebuild
+      - sleep 10  
+build:
     commands:
-      - echo Building the Docker image...
+      - echo Build
+      - sleep 10
   post_build:
     commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker images...
-      - echo Writing image definitions file...
-      - printf '[{"image_tag":"%s"}]' $IMAGE_TAG > imagedefinitions.json
+      - echo Postbuild
+      - sleep 10
+      - "test" > test.json
 artifacts:
   files:
-    - imagedefinitions.json
+    - test.json
