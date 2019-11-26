@@ -6,17 +6,17 @@ phases:
       docker: 18  
   pre_build:
     commands:
-      - echo Prebuild
+      - echo "Prebuild"
       - sleep 10  
   build:
     commands:
-      - echo Build
+      - echo "Build"
       - sleep 10
   post_build:
     commands:
-      - echo Postbuild
+      - echo "Postbuild"
       - sleep 10
-      - "test" > test.json
+      - echo "test" > test.json
 artifacts:
   files:
     - test.json
